@@ -15,6 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+		
+		if User.currentUser != nil {
+			print("current user detected: \(User.currentUser?.name)")
+		}
 		// Override point for customization after application launch.
 		return true
 	}
@@ -42,29 +46,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	}
 	
 	func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
-		TwitterClient.sharedInstance.fetchAccessTokenWithPath("oauth/access_token", method: "POST", requestToken: BDBOAuth1Credential(queryString: url.query), success: { (accessToken: BDBOAuth1Credential!) -> Void in
-			
-			print("access token got")
-			TwitterClient.sharedInstance.requestSerializer.saveAccessToken(accessToken)
-			
-			TwitterClient.sharedInstance.GET("1.1/account/verify_credentials.json", parameters: nil, success: { (operation: NSURLSessionDataTask, response: AnyObject?) -> Void in
-				
-				print("user: \(response!)")
-				}, failure: { (operation: NSURLSessionDataTask?, error: NSError) -> Void in
-					
-					print("failed getting current user")
-			})
-			
-			TwitterClient.sharedInstance.GET("1.1/statuses/home_timeline.json", parameters: nil, success: { (operation: NSURLSessionDataTask, response: AnyObject?) -> Void in
-				print("home_timeline: \(response!)")
-
-				}, failure: { (operation: NSURLSessionDataTask?, error: NSError) -> Void in
-					print("failed getting current timeline")
-			})
-			
-			}) { (error: NSError!) -> Void in
-				print("failed to get access token")
-		}
+		TwitterClient.sharedInstance.openURL(url)
+		
 		return true
 	}
 
