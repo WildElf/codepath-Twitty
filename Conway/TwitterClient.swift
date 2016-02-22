@@ -16,16 +16,15 @@ class TwitterClient: BDBOAuth1SessionManager {
 	var loginSuccess: (() -> ())?
 	var loginFailure: ((NSError) -> ())?
 	let twitterClient = TwitterClient.sharedInstance;
-	
-	//	var loginCompletion: ((user: User?, error: NSError?) -> ())?
-	
-	
+
 	func login (success: () -> (), failure: (NSError) -> ()) {
 		loginSuccess = success;
 		loginFailure = failure;
+		print("set success & fail")
 		
 		// fetch request token and go to authorization page
 		twitterClient.deauthorize();
+		print("deauthorized")
 		twitterClient.fetchRequestTokenWithPath("oauth/request_token", method: "GET", callbackURL: NSURL(string: "conwaytwitty://oauth"), scope: nil, success: { (requestToken: BDBOAuth1Credential!) -> Void in
 			print("Got the request token")
 			

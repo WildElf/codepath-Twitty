@@ -23,6 +23,8 @@ class LoginViewController: UIViewController {
 	
 	@IBAction func onLogin(sender: AnyObject) {
 		
+		print("on login")
+		
 		TwitterClient.sharedInstance.login( { () -> () in
 			print("Logged in");
 			
