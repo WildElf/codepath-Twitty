@@ -7,6 +7,7 @@
 //
 
 import UIKit
+//import BDBOAuth1Manager
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +19,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		
 		if User.currentUser != nil {
 			print("current user detected: \(User.currentUser?.name)")
+			let storyboard = UIStoryboard(name: "Main", bundle: nil)
+			let vc = storyboard.instantiateViewControllerWithIdentifier("TweetsNavigationController")
+			window?.rootViewController = vc
+			
+			NSNotificationCenter.defaultCenter().addObserverForName("UserDidLogout", object: nil, queue: NSOperationQueue.mainQueue(), usingBlock: { (NSNotification) -> Void in
+
+				let storyboard = UIStoryboard(name: "Main", bundle: nil)
+				let vc = storyboard.instantiateInitialViewController()
+				
+				self.window?.rootViewController = vc
+				
+			})
+		} else {
+			print("no current user found")
 		}
 		// Override point for customization after application launch.
 		return true
@@ -46,8 +61,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	}
 	
 	func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
-		TwitterClient.sharedInstance.openURL(url)
 		
+		print(url.description);
+		let twitterClient = TwitterClient.sharedInstance;
+		
+		twitterClient.handleOpenUrl(url);
+				
+//			self.loginSuccess?();
 		return true
 	}
 

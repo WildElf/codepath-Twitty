@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Conway" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="Conway" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -35,17 +35,17 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="0Lz-JZ-Mzv" kind="modal" identifier="loginSegue" id="1lI-Ns-Jnk"/>
+                        <segue destination="dXq-Nl-XH9" kind="modal" identifier="loginSegue" id="1lI-Ns-Jnk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="106" y="300"/>
         </scene>
-        <!--View Controller-->
+        <!--Tweets View Controller-->
         <scene sceneID="04U-tt-WQJ">
             <objects>
-                <viewController id="0Lz-JZ-Mzv" sceneMemberID="viewController">
+                <viewController id="0Lz-JZ-Mzv" customClass="TweetsViewController" customModule="Conway" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="clg-4D-QAI"/>
                         <viewControllerLayoutGuide type="bottom" id="CG0-qc-jjv"/>
@@ -53,12 +53,43 @@
                     <view key="view" contentMode="scaleToFill" id="ArT-vX-4l0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Nu3-eL-uDA">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="N2C-C5-32w">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="0nC-6R-woO">
+                            <connections>
+                                <action selector="onLogout:" destination="0Lz-JZ-Mzv" id="GDa-c8-T4n"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5kt-FN-SVt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="484" y="300"/>
+            <point key="canvasLocation" x="1028" y="300"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Dnj-he-4OD">
+            <objects>
+                <navigationController storyboardIdentifier="TweetsNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="dXq-Nl-XH9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3zD-VW-YZs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="0Lz-JZ-Mzv" kind="relationship" relationship="rootViewController" id="er3-SF-qeZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vsM-nh-kLy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="608" y="300"/>
         </scene>
     </scenes>
 </document>

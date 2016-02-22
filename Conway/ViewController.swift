@@ -7,8 +7,9 @@
 //
 
 import UIKit
+//import BDBOAuth1Manager
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -21,15 +22,14 @@ class ViewController: UIViewController {
 	}
 	
 	@IBAction func onLogin(sender: AnyObject) {
-		TwitterClient.sharedInstance.loginWithCompletion { (user, error) -> () in
-			if user != nil {
-				// segue
-				self.performSegueWithIdentifier("loginSegue", sender: self)
-			} else {
-				// handle error
-			}
-		}
 		
+		TwitterClient.sharedInstance.login( { () -> () in
+			print("Logged in");
+			
+			self.performSegueWithIdentifier("loginSegue", sender: nil)
+			}) { (error: NSError) -> () in
+				print("error: \(error.localizedDescription)");
+		}
 	}
 	
 }
