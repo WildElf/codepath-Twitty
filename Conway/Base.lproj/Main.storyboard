@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -18,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YN8-aN-j1s">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YN8-aN-j1s">
                                 <rect key="frame" x="61" y="169" width="198" height="30"/>
                                 <state key="normal" title="Login to Conway with Twitter"/>
                                 <connections>
@@ -27,12 +26,6 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="YN8-aN-j1s" firstAttribute="top" relation="greaterThanOrEqual" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="45" id="GYC-VE-TOL"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="YN8-aN-j1s" secondAttribute="bottom" priority="999" constant="45" id="P3B-0b-Hh1"/>
-                            <constraint firstItem="YN8-aN-j1s" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="15" id="Pq5-oC-L6O"/>
-                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="YN8-aN-j1s" secondAttribute="trailing" constant="15" id="co3-d4-9Bc"/>
-                        </constraints>
                     </view>
                     <connections>
                         <segue destination="dXq-Nl-XH9" kind="modal" identifier="loginSegue" id="1lI-Ns-Jnk"/>
