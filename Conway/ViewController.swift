@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import BDBOAuth1Manager
+import BDBOAuth1Manager
 
 class LoginViewController: UIViewController {
 	
