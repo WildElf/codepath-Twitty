@@ -1,6 +1,6 @@
 # Project 4 - *Twitty*
 
-**Twitty** is a basic twitter app to read and compose tweets the [Twitter API](https://apps.twitter.com/).
+**Twitty** is a basic twitter app to read and compose tweets with the [Twitter API](https://apps.twitter.com/).
 
 Time spent: **12** hours spent in total
 
