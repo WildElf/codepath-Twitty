@@ -2,7 +2,7 @@
 
 **Twitty** is a basic twitter app to read and compose tweets the [Twitter API](https://apps.twitter.com/).
 
-Time spent: **7** hours spent in total
+Time spent: **12** hours spent in total
 
 ## User Stories
 
@@ -31,6 +31,8 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 ## Notes
 
 Describe any challenges encountered while building the app.
+
+Following the 2nd series of videos made the app not get past the login button.
 
 ## License
 
