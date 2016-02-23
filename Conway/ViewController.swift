@@ -30,8 +30,10 @@ class LoginViewController: UIViewController {
 			
 			self.performSegueWithIdentifier("loginSegue", sender: nil)
 			}) { (error: NSError) -> () in
+				print("not logged in")
 				print("error: \(error.localizedDescription)");
 		}
+		print("done with onlogin");
 	}
 	
 }
