@@ -33,7 +33,6 @@ class Tweet: NSObject {
 		var tweets = [Tweet]()
 		
 		for dictionary in dictionaries {
-
 			tweets.append(Tweet(dictionary: dictionary))
 		}
 		

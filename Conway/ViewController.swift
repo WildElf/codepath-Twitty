@@ -26,14 +26,14 @@ class LoginViewController: UIViewController {
 		print("on login")
 		
 		TwitterClient.sharedInstance.login( { () -> () in
-			print("Logged in");
+			print("Logged in")
 			
 			self.performSegueWithIdentifier("loginSegue", sender: nil)
 			}) { (error: NSError) -> () in
 				print("not logged in")
-				print("error: \(error.localizedDescription)");
+				print("error: \(error.localizedDescription)")
 		}
-		print("done with onlogin");
+		print("done with onlogin")
 	}
 	
 }

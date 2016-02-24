@@ -17,12 +17,12 @@ class TweetsViewController: UIViewController {
 		
 		TwitterClient.sharedInstance.homeTimeline({ (tweets: [Tweet]) -> () in
 			
-			self.tweets = tweets;
-			
+			self.tweets = tweets
+
 			for tweet in tweets {
 				print(tweet.text)
 			}
-			
+
 			}, failure: { (error: NSError) -> () in
 				print("error: \(error.localizedDescription)")
 			})
