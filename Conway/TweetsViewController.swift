@@ -10,7 +10,7 @@ import UIKit
 
 class TweetsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 	
-	var tweets: [Tweet]?
+	var tweets: [Tweet]!
 	
 	@IBOutlet weak var tableView: UITableView!
 	
@@ -23,12 +23,11 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
 		TwitterClient.sharedInstance.homeTimeline({ (tweets: [Tweet]) -> () in
 			
 			self.tweets = tweets
+			self.tableView.reloadData()
 
-			for tweet in tweets {
-				print(tweet.text)
-				
-			}
-
+			//			self.tableView.estimatedRowHeight = 300
+//			self.tableView.rowHeight = UITableViewAutomaticDimension
+			
 			}, failure: { (error: NSError) -> () in
 				print("error: \(error.localizedDescription)")
 			})
@@ -42,6 +41,7 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
 	
 	override func viewDidAppear(animated: Bool) {
 		self.tableView.reloadData()
+		print("view did appear")
 	}
 	
 	@IBAction func onLogout(sender: AnyObject) {
@@ -50,27 +50,16 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
 	}
 	
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		if let tweets = tweets {
-			return tweets.count
-		} else {
-			return 0
-		}
+
+		print("tweet count\(tweets?.count ?? 0)")
+		return tweets?.count ?? 0
 	}
 	
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCellWithIdentifier("tweetCell", forIndexPath: indexPath) as! TweetViewCell
-		
-		let tweet = self.tweets![indexPath.row]
-		
-		cell.userNameLabel.text = tweet.user!.name
-		cell.screenNameLabel.text = tweet.user!.screenName
-		cell.createdAtLabel.text = tweet.createdAtString
-		cell.tweetTextView.text = tweet.text
-		cell.retweetCount.text = String(tweet.retweetCount)
-		cell.favoriteCount.text = String(tweet.favoriteCount)
-		
-		self.tableView.reloadData()
-		
+
+		cell.tweet = tweets[indexPath.row]
+
 		print("row \(indexPath.row)")
 		
 		return cell

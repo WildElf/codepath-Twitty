@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		271529971C6D758F0029E171 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271529961C6D758F0029E171 /* User.swift */; };
 		271529991C6D75AB0029E171 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271529981C6D75AB0029E171 /* Tweet.swift */; };
+		2799A5441C82952B0070B757 /* conway_twitty_transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = 2799A5431C82952B0070B757 /* conway_twitty_transparent.png */; };
+		2799A5461C8295550070B757 /* conway_twitty_sillhoette_400.png in Resources */ = {isa = PBXBuildFile; fileRef = 2799A5451C8295550070B757 /* conway_twitty_sillhoette_400.png */; };
 		27A004DB1C6D57DA00368031 /* TwitterClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A004DA1C6D57DA00368031 /* TwitterClient.swift */; };
 		27C945721C7FF00A00A277FC /* TweetViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C945711C7FF00A00A277FC /* TweetViewCell.swift */; };
 		27D555F21C6D52D000F6CFC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D555F11C6D52D000F6CFC0 /* AppDelegate.swift */; };
@@ -24,6 +26,8 @@
 		089FE1F987FDA6C0BDAC68E0 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		271529961C6D758F0029E171 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		271529981C6D75AB0029E171 /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
+		2799A5431C82952B0070B757 /* conway_twitty_transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = conway_twitty_transparent.png; sourceTree = "<group>"; };
+		2799A5451C8295550070B757 /* conway_twitty_sillhoette_400.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = conway_twitty_sillhoette_400.png; sourceTree = "<group>"; };
 		27A004DA1C6D57DA00368031 /* TwitterClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClient.swift; sourceTree = "<group>"; };
 		27C945711C7FF00A00A277FC /* TweetViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetViewCell.swift; sourceTree = "<group>"; };
 		27D555EE1C6D52D000F6CFC0 /* Conway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conway.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +99,8 @@
 				27D555F51C6D52D000F6CFC0 /* Main.storyboard */,
 				27D555F81C6D52D100F6CFC0 /* Assets.xcassets */,
 				27D555FA1C6D52D100F6CFC0 /* LaunchScreen.storyboard */,
+				2799A5431C82952B0070B757 /* conway_twitty_transparent.png */,
+				2799A5451C8295550070B757 /* conway_twitty_sillhoette_400.png */,
 				27D555FD1C6D52D100F6CFC0 /* Info.plist */,
 			);
 			path = Conway;
@@ -189,7 +195,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				27D555FC1C6D52D100F6CFC0 /* LaunchScreen.storyboard in Resources */,
+				2799A5461C8295550070B757 /* conway_twitty_sillhoette_400.png in Resources */,
 				27D555F91C6D52D100F6CFC0 /* Assets.xcassets in Resources */,
+				2799A5441C82952B0070B757 /* conway_twitty_transparent.png in Resources */,
 				27D555F71C6D52D000F6CFC0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

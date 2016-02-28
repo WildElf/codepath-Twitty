@@ -17,15 +17,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="conway_twitty_transparent.png" translatesAutoresizingMaskIntoConstraints="NO" id="6ok-O4-YHD">
+                                <rect key="frame" x="0.0" y="28" width="240" height="265"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YN8-aN-j1s">
-                                <rect key="frame" x="61" y="169" width="198" height="30"/>
-                                <state key="normal" title="Login to Conway with Twitter"/>
+                                <rect key="frame" x="102" y="253" width="198" height="30"/>
+                                <color key="backgroundColor" red="0.85882352939999995" green="0.8862745098" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Login to Conway for a Spell">
+                                    <color key="titleColor" red="0.12549019610000001" green="0.13725490200000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="onLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c60-uH-EXI"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.30980392159999998" green="0.60784313729999995" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <segue destination="dXq-Nl-XH9" kind="modal" identifier="loginSegue" id="1lI-Ns-Jnk"/>
@@ -73,9 +80,9 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I50-l5-uUS" userLabel="Profile Image">
                                                     <rect key="frame" x="8" y="8" width="58" height="55"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Created At" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Oi-NT-rpf">
-                                                    <rect key="frame" x="247" y="8" width="65" height="16"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="252" verticalHuggingPriority="251" fixedFrame="YES" text="Created At" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Oi-NT-rpf">
+                                                    <rect key="frame" x="239" y="8" width="73" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -111,8 +118,12 @@
                                         <connections>
                                             <outlet property="createdAtLabel" destination="2Oi-NT-rpf" id="gfq-OG-k5S"/>
                                             <outlet property="favoriteCount" destination="vxd-o0-t7i" id="O3J-bL-Weh"/>
+                                            <outlet property="favoriteImageView" destination="jSx-QM-CZQ" id="PCM-I7-2zb"/>
+                                            <outlet property="profileImageView" destination="I50-l5-uUS" id="fXc-XF-uP7"/>
                                             <outlet property="retweetCount" destination="Ikd-QF-p1e" id="B0p-jH-BUi"/>
+                                            <outlet property="retweetImageView" destination="g9Y-IX-wev" id="XIj-WQ-gsy"/>
                                             <outlet property="screenNameLabel" destination="sFf-K8-9md" id="Jue-12-UJE"/>
+                                            <outlet property="tweetImageView" destination="UD0-xC-PH1" id="THQ-r6-qHS"/>
                                             <outlet property="tweetTextView" destination="plS-od-xal" id="Vo8-3W-1g0"/>
                                             <outlet property="userNameLabel" destination="CxO-Yv-3yh" id="VZi-8m-x0C"/>
                                         </connections>
@@ -156,4 +167,7 @@
             <point key="canvasLocation" x="608" y="300"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="conway_twitty_transparent.png" width="628" height="708"/>
+    </resources>
 </document>

@@ -19,7 +19,6 @@ class TwitterClient: BDBOAuth1SessionManager {
 
 	var loginSuccess: (() -> ())?
 	var loginFailure: ((NSError) -> ())?
-//	let twitterClient = TwitterClient.sharedInstance;
 
 	func login (success: () -> (), failure: (NSError) -> ()) {
 		print("in login")
