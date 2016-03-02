@@ -21,6 +21,8 @@ class Tweet: NSObject {
 	
 	var profileImageURL: NSURL?
 	var tweetImageURL: NSURL?
+	
+	var userDict: NSDictionary
 
 	init(dictionary: NSDictionary) {
 		user = User(dictionary: dictionary["user"] as! NSDictionary)
@@ -28,10 +30,11 @@ class Tweet: NSObject {
 		createdAtString = dictionary["created_at"] as? String
 		retweetCount = (dictionary["retweet_count"] as? Int) ?? 0;
 		favoriteCount = (dictionary["favorite_count"] as? Int) ?? 0;
-
+		
+		userDict = (dictionary["user"] as? NSDictionary)!
+		
 		// determine profile image
-		if let profileImageURLString = dictionary["profile_image_url"] as? String {
-			print("profile image: \(profileImageURLString)")
+		if let profileImageURLString = userDict["profile_image_url"] as? String {
 			self.profileImageURL = NSURL(string: profileImageURLString)
 		} else {
 			print("no profile image, let's go Conway!")
